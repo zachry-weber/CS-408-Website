@@ -10,7 +10,7 @@
     <header>
         <h1>Welcome To Stiggy!</h1>
     </header>
-    <div class= "nav">
+    <div class= "navb">
         <a href="index.php">Home</a>
         <a href="/pages/design.php">Design</a>
         <a href="/pages/examples.php">Examples</a>
