@@ -18,12 +18,12 @@
             padding: 10px;
         }
 
-        .nav a {
+        .navb a {
             display: inline;
             margin-right: 20px;
         }
 
-	.nav split {	
+	.navb split {	
 	    float: right;
 	}
 
