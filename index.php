@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Welcome To Stiggy!</h1>
     </header>
     <div class= "navb">
@@ -33,15 +33,15 @@
     <section>
         <h2>Services</h2>
         <ul>
-            <li>Web Design</li>
-            <li>Graphic Design</li>
-            <li>SEO Optimization</li>
+            <li>Uhhhh</li>
+            <li>Ermmmmmm</li>
+            <li>Ok</li>
         </ul>
     </section>
     <section>
-        <h2>Contact Us</h2>
-        <p>Email: contact@example.com</p>
-        <p>Phone: +1 (123) 456-7890</p>
+        <h2>Contact Me</h2>
+        <p>Email: zachryweber@u.boisestate.edu</p>
+        <p>Phone: 541-385-0906</p>
     </section>
     <footer>
         &copy; 2023 Stiggy
