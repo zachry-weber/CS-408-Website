@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Mock-up Website</title>
-    <style>
-        <link rel="stylesheet" type="text/css" href="/css/index.css">
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
     <header>
@@ -38,7 +36,7 @@
         <p>Phone: +1 (123) 456-7890</p>
     </section>
     <footer>
-        &copy; 2023 My Mock-up Website
+        &copy; 2023 Stiggy
     </footer>
 </body>
 </html>
