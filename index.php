@@ -8,18 +8,16 @@
 </head>
 <body>
     <header>
-        <h1>Welcome Stiggy!</h1>
+        <h1>Welcome To Stiggy!</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="/pages/about.php">About</a></li>
-            <li><a href="/pages/design.php">Design</a></li>
-            <li><a href="/pages/examples.php">Examples</a></li>
-	    <li><a href="/pages/login.php">Login</a></li>
-	    <li><a href="/pages/signup">Sign Up</a></li>
-        </ul>
-    </nav>
+    <div class= "nav">
+        <a href="index.php">Home</a>
+        <a href="/pages/design.php">Design</a>
+        <a href="/pages/examples.php">Examples</a>
+ 	<a href="/pages/about.php">About</a>
+	<a href="/pages/login.php" class="split">Login</a>
+	<a href="/pages/signup" class="split">Sign Up</a>
+    </div>
     <section>
         <h2>About Us</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in fermentum nulla. Nullam at diam euismod, dapibus massa ut, laoreet felis.</p>
