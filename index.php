@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <h1>Welcome To Stiggy!</h1>
     </header>
     <div class= "navb">
