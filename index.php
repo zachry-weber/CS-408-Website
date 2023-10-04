@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stiggy</title>
+    <img src="StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
+    <link rel="shortcut icon" href="StiggyLogo.png">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
 </head>
 <body>
