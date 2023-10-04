@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Mock-up Website</title>
-    <link rel="stylesheet" type="text/css" href="/css/inedx.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="/pages/about.php">About</a></li>
             <li><a href="/pages/design.php">Design</a></li>
             <li><a href="/pages/examples.php">Examples</a></li>
