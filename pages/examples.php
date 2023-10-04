@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome Stiggy!</h1>
+        <h1>Welcome To Stiggy!</h1>
     </header>
     <div class= "navb">
         <a href="../index.php">Home</a>
