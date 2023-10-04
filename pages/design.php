@@ -16,8 +16,8 @@
             <li><a href="/pages/about.php">About</a></li>
             <li><a href="/pages/design.php">Design</a></li>
             <li><a href="/pages/examples.php">Examples</a></li>
-	    <li><a href="/pages/login.php">Login</a></li>
-	    <li><a href="/pages/signup">Sign Up</a></li>
+            <li><a href="/pages/login.php">Login</a></li>
+            <li><a href="/pages/signup">Sign Up</a></li>
         </ul>
     </nav>
     <section>
