@@ -18,7 +18,7 @@
             padding: 10px;
         }
 
-        .navb a {
+        .navb a.split {
             display: inline;
             margin-right: 20px;
         }
