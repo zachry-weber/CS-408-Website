@@ -1,11 +1,21 @@
 <style>
 
-        header.head {
-            background-color: #2C5F2D;
-            color: #000;
+	body, h1, h2, p, ul, li {
+    	    margin: 0;
+    	    padding: 0;
+	}
+
+	body {
+    	    font-family: Arial, sans-serif;
+    	    background-color: DimGray;
+	}
+
+	header {
+    	    background-color: #2C5F2D;
+    	    color: #000;
             text-align: center;
-            padding: 20px;
-        }
+    	    padding: 20px;
+	}
 
         .navb {
             background-color: #2BAE66;

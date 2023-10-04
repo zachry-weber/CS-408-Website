@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stiggy</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <style type="text/css">
-        body {
-	    font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: DimGray;
-        }
-    </style>
 </head>
 <body>
     <header class="head">
