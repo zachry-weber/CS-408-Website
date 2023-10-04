@@ -11,7 +11,7 @@
         <h1>Welcome Stiggy!</h1>
     </header>
     <div class= "navb">
-        <a href="index.php">Home</a>
+        <a href="../index.php">Home</a>
         <a href="/pages/design.php">Design</a>
         <a href="/pages/examples.php">Examples</a>
         <a href="/pages/about.php">About</a>
