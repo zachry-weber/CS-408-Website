@@ -3,18 +3,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #2C5F2D;
+            color: #000;
             text-align: center;
             padding: 20px;
         }
 
         .navb {
-            background-color: #444;
+            background-color: #2BAE66;
             padding: 10px;
         }
 
@@ -36,8 +36,8 @@
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #2C5F2D;
+            color: #000;
             text-align: center;
             padding: 10px;
         }
