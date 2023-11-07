@@ -22,6 +22,7 @@
     </div>
     <section>
         <h2>Create custom stickers here!</h2>
+        <p> unfuck </p>
         /* <input type="button" value="Create Now" onclick="location='design.php'" /> */
     </section>
     <section>
