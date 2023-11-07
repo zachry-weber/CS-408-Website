@@ -26,7 +26,7 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="aboutMe">
-    <img src="../mephoto.JPG" alt="me" width="300" height="200">
+    <img src="../meagain.JPG" alt="me">
         <p>Hi my name is Zachry Weber, I am 23 years old and currently attend
             Boise State University. My hobbies include playing disc golf, ultimate
             frisbee, fishing, golfing, and hanging out with friends.
