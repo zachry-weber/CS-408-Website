@@ -1,3 +1,9 @@
+<?php
+session_start();
+print_r($_SESSION);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
 </head>
 <body>
     <header class="head">
-        <h1>Welcome Too Stiggy!</h1>
+        <h1>Welcome To Stiggy!</h1>
         <img src="StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
     </header>
     <div class= "navb">

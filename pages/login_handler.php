@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once '../Dao.php';
 
@@ -10,6 +9,7 @@ $dao = new Dao();
 $_SESSION['authenticated'] = $dao->authenticate($email, $password);
 
 if ($_SESSION['authenticated']) {
+   session_start();
    header('Location: ../index.php');
 } else {
    header('Location: /pages/login.php');
