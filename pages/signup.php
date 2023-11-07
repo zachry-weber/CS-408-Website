@@ -6,7 +6,6 @@
     <title>stiggy</title>
     <link rel="shortcut icon" href="../StiggyLogo.png">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
     <header class="head">
