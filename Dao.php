@@ -42,6 +42,7 @@ class Dao {
       if ($c) {
         echo ("test");
         if (password_verify($password, $c["password_hash"])) {
+          echo ("balls");
           return true;
         }
         else{
