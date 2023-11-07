@@ -27,7 +27,7 @@
     <section>
         <h2>Services</h2>
         <ul>
-            <li>Uhhhh</li>
+            <li>Test</li>
             <li>Ermmmmmm</li>
             <li>Ok</li>
         </ul>
