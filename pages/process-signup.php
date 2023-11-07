@@ -28,6 +28,8 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
 
+$name = trim($_POST["name"]);
+$email = trim($_POST["email"]);
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $dao = new Dao();
