@@ -30,7 +30,7 @@ print_r($_SESSION);
     </div>
     
     <footer>
-        &copy; 2023 Stiggy     Thank You For Visiting!
+        &copy; 2023 Stiggy Thank You For Visiting!
     </footer>
 </body>
 </html>
