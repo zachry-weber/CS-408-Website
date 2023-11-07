@@ -10,9 +10,7 @@ $dao = new Dao();
 $_SESSION['authenticated'] = $dao->authenticate($email, $password);
 
 if ($_SESSION['authenticated']) {
-   //header('Location: ../index.php');
-   echo ("yes");
+   header('Location: ../index.php');
 } else {
-   //header('Location: /pages/login.php');
-   echo ("no");
+   header('Location: /pages/login.php');
 }
