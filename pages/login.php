@@ -22,6 +22,16 @@
     </div>
     <div class="login">
         <h2>Login</h2>
+        <form method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"
+               value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        
+        <button>Log in</button>
+    </form>
     </div>
     <footer>
         &copy; 2023 Stiggy

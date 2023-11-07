@@ -6,6 +6,7 @@
     <title>stiggy</title>
     <link rel="shortcut icon" href="../StiggyLogo.png">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
     <header class="head">
@@ -28,7 +29,7 @@
 	        <input type="text" id="name" name="name">
             </div>
             <div>
-	        <label for="email">email</label>
+	        <label for="email">Email</label>
 		<input type="email" id="email" name="email">
 	    </div>
             <div>
@@ -37,7 +38,7 @@
             </div>
         
             <div>
-                <label for="password_confirmation">Repeat password</label>
+                <label for="password_confirmation">Repeat Password</label>
                 <input type="password" id="password_confirmation" name="password_confirmation">
             </div>
         

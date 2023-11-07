@@ -30,6 +30,10 @@ class Dao {
       }
   }
 
+  public function authenticate ($email, $password) {
+    
+ }
+
 }
 
 ?>
