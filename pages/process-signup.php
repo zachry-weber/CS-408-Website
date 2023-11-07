@@ -35,5 +35,5 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $dao = new Dao();
 $dao->newUser($name, $email, $password_hash);
 
-header("Location: ../login.php");
+header("Location: /pages/login.php");
 
