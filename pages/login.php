@@ -22,7 +22,7 @@
     </div>
     <div class="login">
         <h2>Login</h2>
-        <form method="post" action="login_handler.php>
+        <form method="post" action="login_handler.php">
         <label for="email">Email</label>
         <input type="email" name="email" id="email"
                value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
