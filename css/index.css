@@ -1,8 +1,8 @@
 <style>
 
 	body, h1, h2, p, ul, li {
-    	    margin: 0;
-    	    padding: 0;
+    	    margin: 0px;
+    	    padding: 0px;
 	}
 
 	body {
@@ -14,7 +14,7 @@
     	    background-color: #2C5F2D;
     	    color: #000;
             text-align: center;
-    	    padding: 20px;
+    	    padding: 5px;
 	}
 
         .navb {
