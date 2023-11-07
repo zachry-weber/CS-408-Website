@@ -41,11 +41,10 @@ class Dao {
         $c = $q->fetch();
       if ($c) {
         if (password_verify($password, $c["password_hash"])) {
-          $_SESSION['authenticated'] = true;
-          exit();
+          return true;
         }
         else{
-          $_SESSION['authenticated'] = false;
+          return false;
         }
           
       }
