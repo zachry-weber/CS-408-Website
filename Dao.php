@@ -10,18 +10,18 @@ class Dao {
           $this->pass); 
   }
   
-  public function newUser($userName, $email, $password_hash){
+  public function newUser($name, $email, $password_hash){
     try{
       $conn = $this->getConnection();
       $saveQuery =
-            "INSERT INTO Users
-            (Email, Username, PasswordHash)
+            "INSERT INTO users
+            (username, email, password)
             VALUES
-            (:email, :userName, :password)";
+            (:name, :email, :password_hash)";
         $q = $conn->prepare($saveQuery);
+        $q->bindParam(":name", $name);
         $q->bindParam(":email", $email);
-        $q->bindParam(":userName", $userName);
-        $q->bindParam(":password", $password_hash);
+        $q->bindParam(":password_hash", $password_hash);
         $q->execute();
 
       } catch (PDOException $e) {
