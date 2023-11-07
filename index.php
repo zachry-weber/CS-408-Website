@@ -22,7 +22,7 @@
     </div>
     <section>
         <h2>Create custom stickers here!</h2>
-        <input type="button" value="Create Now" onclick="location='design.php'" />
+        /* <input type="button" value="Create Now" onclick="location='design.php'" /> */
     </section>
     <section>
         <h2>Services</h2>
