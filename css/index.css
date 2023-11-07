@@ -50,6 +50,7 @@
 
         .easy li {
             display: inline-block;
+	    margin: 3px;
 	}
 
         .photo {
