@@ -10,7 +10,7 @@
 <body>
     <header class="head">
         <h1>Welcome To Stiggy!</h1>
-        <img src="StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
+        <img src="../StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
     </header>
     <div class= "navb">
         <a href="../index.php">Home</a>
