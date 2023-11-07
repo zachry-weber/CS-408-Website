@@ -28,7 +28,7 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$dao = new Dao();
+//$dao = new Dao();
 
 echo ("fuck");
 
