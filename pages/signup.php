@@ -22,7 +22,7 @@
     </div>
     <div class="signup">
         <h2>Signup</h2>
-        <form action="process-signup.php" method="post">
+        <form action="signup_handler.php" method="post">
             <div>
 	        <label for="name">Name</label>
 	        <input type="text" id="name" name="name">
