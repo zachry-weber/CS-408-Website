@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_SESSION["POST"]["name"]);
+print_r($_SESSION);
 
 ?>
 
@@ -44,7 +44,7 @@ print_r($_SESSION["POST"]["name"]);
         <p>Phone: 541-385-0906</p>
     </div>
     <footer>
-        &copy; 2023 Stiggy
+        &copy; 2023 Stiggy Thank You For Visiting! 
     </footer>
 </body>
 </html>

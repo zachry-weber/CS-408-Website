@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +25,12 @@ session_start();
         <a href="/pages/signup.php" class="split">Signup</a>
         <a href="/pages/login.php" class="split">Login</a>
     </div>
-    <div class="create">
-        <h2>Design custom stickers here!</h2>
-        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
+    <div class="aboutMe">
+    <img src="../picofme.JPG" alt="me">
+        <p>Hi my name is Zachry Weber, I am 23 years old and currently attend
+            Boise State University. My hobbies include playing disc golf, ultimate
+            frisbee, fishing, golfing, and hanging out with friends.
+        </p>
     </div>
     <div class="easy">
         <h2>Create in 3 easy steps</h2>
@@ -37,13 +40,8 @@ session_start();
             <li>3. View in Gallery</li>
         </ul>
     </div>
-    <div class="photo">
-        <h2>Contact Me</h2>
-        <p>Email: zachryweber@u.boisestate.edu</p>
-        <p>Phone: 541-385-0906</p>
-    </div>
     <footer>
-        &copy; 2023 Stiggy
+        &copy; 2023 Stiggy Thank You For Visiting!
     </footer>
 </body>
 </html>
