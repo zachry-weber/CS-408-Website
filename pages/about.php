@@ -26,19 +26,16 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="aboutMe">
-    <img src="../meagain.JPG" alt="me">
+        <img src="../meagain.jpg" alt="me">
         <p>Hi my name is Zachry Weber, I am 23 years old and currently attend
             Boise State University. My hobbies include playing disc golf, ultimate
             frisbee, fishing, golfing, and hanging out with friends.
         </p>
     </div>
     <div class="easy">
-        <h2>Create in 3 easy steps</h2>
-        <ul>
-            <li>1. Design and choose a template</li>
-            <li>2. Upload a Photo</li>
-            <li>3. View in Gallery</li>
-        </ul>
+      <video controls loop>
+      <source src="../discgolf.MP4" type="video/mp4">
+      </video>  
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
