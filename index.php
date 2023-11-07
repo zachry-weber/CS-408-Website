@@ -21,22 +21,22 @@
 	<a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="create">
-        <h2>Create custom stickers here!</h2>
-        <input type="button" value="Create Now" onclick="location='/pages/design.php'" />
+        <h2>Design custom stickers here!</h2>
+        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
     </div>
-    <section>
-        <h2>Services</h2>
+    <div class="easy">
+        <h2>Create in 3 easy steps</h2>
         <ul>
-            <li>Test</li>
-            <li>Ermmmmmm</li>
-            <li>Ok</li>
+            <li>1. Choose a Template</li>
+            <li>2. Upload a Photo</li>
+            <li>3. View in Gallery</li>
         </ul>
-    </section>
-    <section>
+    </div>
+    <div class="photo">
         <h2>Contact Me</h2>
         <p>Email: zachryweber@u.boisestate.edu</p>
         <p>Phone: 541-385-0906</p>
-    </section>
+    </div>
     <footer>
         &copy; 2023 Stiggy
     </footer>
