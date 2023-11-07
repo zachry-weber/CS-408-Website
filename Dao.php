@@ -11,17 +11,22 @@ class Dao {
   }
   
   public function newUser($name, $email, $password) {
-    $conn = $this->getConnection();
-    $saveUser =
-      "INSERT INTO users
-      (username, email, password)
-      VALUES
-      (:username, :email, :password)";
-    $q = $conn->prepare($saveUser);
-    $q->bindParam(":username", $username);
-    $q->bindParam(":email:", $email);
-    $q->bindParam(":password", $password);
-    $q->execute();
+    try{
+      $conn = $this->getConnection();
+      $saveUser =
+        "INSERT INTO users
+        (username, email, password)
+        VALUES
+        (:username, :email, :password)";
+      $q = $conn->prepare($saveUser);
+      $q->bindParam(":username", $username);
+      $q->bindParam(":email:", $email);
+      $q->bindParam(":password", $password);
+      $q->execute();
+    }
+    catch (PDOException $e) {
+      die("dtabase fail" . $e->getMessage());
+    }
   }
 
 }
