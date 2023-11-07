@@ -28,7 +28,7 @@ print_r($_SESSION);
     <div class="designTop">
         <h2>Choose your favorite template</h2>
     </div>
-    <div class="Templates">
+    <div class="templates">
         <ul>
             <li>Square</li>
             <li>Circle</li>
