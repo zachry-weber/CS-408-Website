@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mock-up Website</title>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <title>stiggy</title>
+    <link rel="shortcut icon" href="StiggyLogo.png">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
 </head>
 <body>
-    <header>
+    <header class="head">
         <h1>Welcome To Stiggy!</h1>
+        <img src="StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
     </header>
     <div class= "navb">
         <a href="../index.php">Home</a>
         <a href="/pages/design.php">Design</a>
         <a href="/pages/gallery.php">Gallery</a>
         <a href="/pages/about.php">About</a>
+        <a href="/pages/signup.php" class="split">Sign Up</a>
         <a href="/pages/login.php" class="split">Login</a>
-        <a href="/pages/signup" class="split">Sign Up</a>
     </div>
-    <section>
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in fermentum nulla. Nullam at diam euismod, dapibus massa ut, laoreet felis.</p>
-    </section>
-    <section>
-        <h2>Services</h2>
+    <div class="create">
+        <h2>Design custom stickers here!</h2>
+        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
+    </div>
+    <div class="easy">
+        <h2>Create in 3 easy steps</h2>
         <ul>
-            <li>Web Design</li>
-            <li>Graphic Design</li>
-            <li>SEO Optimization</li>
-        </ul> 
-    </section>
-    <section> 
-        <h2>Contact Us</h2>
-        <p>Email: contact@example.com</p>
-        <p>Phone: +1 (123) 456-7890</p> 
-    </section>
+            <li>1. Design and choose a template</li>
+            <li>2. Upload a Photo</li>
+            <li>3. View in Gallery</li>
+        </ul>
+    </div>
+    <div class="photo">
+        <h2>Contact Me</h2>
+        <p>Email: zachryweber@u.boisestate.edu</p>
+        <p>Phone: 541-385-0906</p>
+    </div>
     <footer>
-        &copy; 2023 My Mock-up Website
-    </footer> 
+        &copy; 2023 Stiggy
+    </footer>
 </body>
 </html>

@@ -17,7 +17,7 @@
         <a href="/pages/design.php">Design</a>
         <a href="/pages/gallery.php">Gallery</a>
  	<a href="/pages/about.php">About</a>
-        <a href="/pages/signup" class="split">Sign Up</a>
+        <a href="/pages/signup.php" class="split">Sign Up</a>
 	<a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="create">
@@ -27,7 +27,7 @@
     <div class="easy">
         <h2>Create in 3 easy steps</h2>
         <ul>
-            <li>1. Design and choose a Template</li>
+            <li>1. Design and choose a template</li>
             <li>2. Upload a Photo</li>
             <li>3. View in Gallery</li>
         </ul>
