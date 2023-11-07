@@ -32,6 +32,13 @@
 	    float: right;
 	}
 
+	.create {
+            text-allign: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+	}
+
         section {
             max-width: 800px;
             margin: 20px auto;

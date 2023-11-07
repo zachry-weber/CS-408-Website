@@ -20,11 +20,10 @@
         <a href="/pages/signup" class="split">Sign Up</a>
 	<a href="/pages/login.php" class="split">Login</a>
     </div>
-    <section>
+    <div class="create">
         <h2>Create custom stickers here!</h2>
-        <p> unfuck </p>
-        //<input type="button" value="Create Now" onclick="location='design.php'" />
-    </section>
+        <input type="button" value="Create Now" onclick="location='/pages/design.php'" />
+    </div>
     <section>
         <h2>Services</h2>
         <ul>
