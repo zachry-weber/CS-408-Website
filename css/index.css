@@ -1,14 +1,14 @@
 <style>
 
 	body, h1, h2, p, ul, li {
-    	    margin: 0px;
-    	    padding: 0px;
+    	    /* margin: 0px; */
+    	    /* padding: 0px; */
 	}
 
 	body {
     	    font-family: Arial, sans-serif;
     	    background-color: DimGray;
-	    margin: 0px;
+	    margin: 2px;
 	}
 
 	header {
