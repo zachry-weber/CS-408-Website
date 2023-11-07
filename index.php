@@ -17,8 +17,8 @@
         <a href="/pages/design.php">Design</a>
         <a href="/pages/examples.php">Examples</a>
  	<a href="/pages/about.php">About</a>
+        <a href="/pages/signup" class="split">Sign Up</a>
 	<a href="/pages/login.php" class="split">Login</a>
-	<a href="/pages/signup" class="split">Sign Up</a>
     </div>
     <section>
         <h2>About Us</h2>
