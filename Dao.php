@@ -30,7 +30,7 @@ class Dao {
       }
   }
 
-  public function authenticate ($email) {
+  public function authenticate ($email, $password) {
     try{
       $conn = $this->getConnection();
       $getQuery =
@@ -38,11 +38,22 @@ class Dao {
         $q = $conn->prepare($getQuery);
         $q->bindParam(":email", $email);
         $q->execute();
-
-      } catch (PDOException $e) {
-      // Handle database query execution error
-        die("Database query failed: " . $e->getMessage());
+        $c = $q->fetch();
+      if ($c) {
+        if (password_verify($password, $c["password_hash"])) {
+          $_SESSION['authenticated'] = true;
+          exit();
+        }
+        else{
+          $_SESSION['authenticated'] = false;
+        }
+          
       }
+    } 
+    catch (PDOException $e) {
+      // Handle database query execution error
+      die("Database query failed: " . $e->getMessage());
+    }
  }
 
 }
