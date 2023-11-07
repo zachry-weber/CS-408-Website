@@ -41,7 +41,7 @@ class Dao {
         $c = $q->fetch();
       if ($c) {
         if (password_verify($password, $c["password"])) {
-          return true;
+          return $c;
         }
         else{
           return false;
