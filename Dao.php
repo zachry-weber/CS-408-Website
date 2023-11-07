@@ -10,7 +10,7 @@ class Dao {
           $this->pass); 
   }
   
-  public function newUser($userName, $email, $password){
+  public function newUser($userName, $email, $password_hash){
     try{
       $conn = $this->getConnection();
       $saveQuery =
@@ -21,7 +21,7 @@ class Dao {
         $q = $conn->prepare($saveQuery);
         $q->bindParam(":email", $email);
         $q->bindParam(":userName", $userName);
-        $q->bindParam(":password", $password);
+        $q->bindParam(":password", $password_hash);
         $q->execute();
 
       } catch (PDOException $e) {
