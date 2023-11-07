@@ -30,8 +30,19 @@ class Dao {
       }
   }
 
-  public function authenticate ($email, $password) {
-    
+  public function authenticate ($email) {
+    try{
+      $conn = $this->getConnection();
+      $getQuery =
+            "SELECT * FROM users WHERE email=:email";
+        $q = $conn->prepare($getQuery);
+        $q->bindParam(":email", $email);
+        $q->execute();
+
+      } catch (PDOException $e) {
+      // Handle database query execution error
+        die("Database query failed: " . $e->getMessage());
+      }
  }
 
 }
