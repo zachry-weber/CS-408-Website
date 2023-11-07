@@ -64,18 +64,25 @@
             padding: 10px;
             bottom: 0px;
         }
+    
     .aboutMe p{
         text-align: center;
         margin: 20px;
     }
-    .aboutMe img {
+    .meVideo {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin: 30px;
+    }
+    .meVideo img {
         width: 200px;
         height: 300px;
         float: left;
         margin: 20px;
     }
     .meVideo video{
-        width: 450px;
+        width: 400px;
         height: 500px;
         margin: 20px auto;
     }
