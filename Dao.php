@@ -40,6 +40,7 @@ class Dao {
         $q->execute();
         $c = $q->fetch();
       if ($c) {
+        echo ("test");
         if (password_verify($password, $c["password_hash"])) {
           return true;
         }
