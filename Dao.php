@@ -19,7 +19,7 @@ class Dao {
       (:username, :email, :password)";
     $q = $conn->prepare($saveUser);
     $q->bindParam(":username", $username);
-    $q->bindParam(":email:, $email);
+    $q->bindParam(":email:", $email);
     $q->bindParam(":password", $password);
     $q->execute();
   }
