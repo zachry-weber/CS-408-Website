@@ -25,25 +25,12 @@ print_r($_SESSION);
         <a href="/pages/signup.php" class="split">Signup</a>
         <a href="/pages/login.php" class="split">Login</a>
     </div>
-    <div class="create">
-        <h2>Design custom stickers here!</h2>
-        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
+    <div class="gallery">
+        <h2>Take a look at everyones awesome designs</h2>
     </div>
-    <div class="easy">
-        <h2>Create in 3 easy steps</h2>
-        <ul>
-            <li>1. Design and choose a template</li>
-            <li>2. Upload a Photo</li>
-            <li>3. View in Gallery</li>
-        </ul>
-    </div>
-    <div class="photo">
-        <h2>Contact Me</h2>
-        <p>Email: zachryweber@u.boisestate.edu</p>
-        <p>Phone: 541-385-0906</p>
-    </div>
+    
     <footer>
-        &copy; 2023 Stiggy Thank You For Visiting!
+        &copy; 2023 Stiggy     Thank You For Visiting!
     </footer>
 </body>
 </html>

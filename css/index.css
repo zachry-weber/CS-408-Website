@@ -102,3 +102,9 @@
         margin: 20px;
     }
 
+    .gallery {
+        margin: 20px;
+    }
+    .gallery h2{
+        text-align: center;
+    }
