@@ -10,23 +10,24 @@ class Dao {
           $this->pass); 
   }
   
-  public function newUser($name, $email, $password) {
+  public function newUser($userName, $email, $password){
     try{
       $conn = $this->getConnection();
-      $saveUser =
-        "INSERT INTO users
-        (username, email, password)
-        VALUES
-        (:username, :email, :password)";
-      $q = $conn->prepare($saveUser);
-      $q->bindParam(":username", $username);
-      $q->bindParam(":email:", $email);
-      $q->bindParam(":password", $password);
-      $q->execute();
-    }
-    catch (PDOException $e) {
-      die("dtabase fail" . $e->getMessage());
-    }
+      $saveQuery =
+            "INSERT INTO Users
+            (Email, Username, PasswordHash)
+            VALUES
+            (:email, :userName, :password)";
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":email", $email);
+        $q->bindParam(":userName", $userName);
+        $q->bindParam(":password", $password);
+        $q->execute();
+
+      } catch (PDOException $e) {
+      // Handle database query execution error
+        die("Database query failed: " . $e->getMessage());
+      }
   }
 
 }
