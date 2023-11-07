@@ -25,22 +25,16 @@ print_r($_SESSION);
         <a href="/pages/signup.php" class="split">Signup</a>
         <a href="/pages/login.php" class="split">Login</a>
     </div>
-    <div class="create">
-        <h2>Design custom stickers here!</h2>
-        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
+    <div class="designTop">
+        <h2>Choose your favorite template</h2>
     </div>
-    <div class="easy">
-        <h2>Create in 3 easy steps</h2>
+    <div class="Templates">
         <ul>
-            <li>1. Design and choose a template</li>
-            <li>2. Upload a Photo</li>
-            <li>3. View in Gallery</li>
+            <li>Square</li>
+            <li>Circle</li>
+            <li>Ellipse</li>
+            <li>Rectangle</li>
         </ul>
-    </div>
-    <div class="photo">
-        <h2>Contact Me</h2>
-        <p>Email: zachryweber@u.boisestate.edu</p>
-        <p>Phone: 541-385-0906</p>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!

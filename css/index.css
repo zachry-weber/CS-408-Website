@@ -90,3 +90,13 @@
         margin: auto;
     }
 
+    .designTop h2{
+        text-align: center;
+    }
+    .templates li {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px;
+    }
+
