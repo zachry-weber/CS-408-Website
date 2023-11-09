@@ -10,8 +10,6 @@ if (isset($_SESSION["user_id"])){
     $user = $dao->getUser($_SESSION["user_id"]);
 }
 
-echo($user["username"]);
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +24,7 @@ echo($user["username"]);
 </head>
 <body>
     <header class="head">
-          <h1>Welcome To Stiggy! <?php echo($user["username"]) ?></h1>
+          <h1>Welcome To Stiggy <?php echo($user["username"]) ?>!</h1>
         <img src="StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
     </header>
     <div class= "navb">
