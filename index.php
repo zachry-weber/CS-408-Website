@@ -2,11 +2,12 @@
 session_start();
 require_once "Dao.php";
 $dao = new Dao();
+$_SESSION["user_id"] = 2;
 print_r($_SESSION);
 echo("works");
-if (isset($_SESSION["user_id"])){
-    $user = $dao->getUser($_SESSION["user_id"]);
-}
+// if (isset($_SESSION["user_id"])){
+//     $user = $dao->getUser($_SESSION["user_id"]);
+// }
 
 ?>
 
