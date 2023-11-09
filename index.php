@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../Dao.php";
+require_once "Dao.php";
 $dao = new Dao();
 echo("works");
 // if (isset($_SESSION["user_id"])){
