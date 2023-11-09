@@ -12,6 +12,8 @@ if (isset($_SESSION["user_id"])){
     $user = $dao->getUser($_SESSION["user_id"]);
 }
 
+echo($user["username"]);
+
 ?>
 
 <!DOCTYPE html>
