@@ -2,8 +2,6 @@
 session_start();
 require_once "Dao.php";
 $dao = new Dao();
-print_r($_SESSION);
-echo("works");
 if(!isset($_SESSION['authenticated'])) {
     header('Location: /pages/signup.php');
     exit; 
