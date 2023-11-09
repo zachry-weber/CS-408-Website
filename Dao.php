@@ -30,24 +30,24 @@ class Dao {
       }
   }
 
-//   public function getUser ($user_id) {
-//     try{
-//       $conn = $this->getConnection();
-//       $getQuery =
-//             "SELECT * FROM users WHERE user_id=:user_id";
-//         $q = $conn->prepare($getQuery);
-//         $q->bindParam(":user_id", $user_id);
-//         $q->execute();
-//         $c = $q->fetch();
-//       if ($c) {
-//         return $c;
-//       }
-//     } 
-//     catch (PDOException $e) {
-//       // Handle database query execution error
-//       die("Database query failed: " . $e->getMessage());
-//     }
-//  }
+  public function getUser ($user_id) {
+    try{
+      $conn = $this->getConnection();
+      $getQuery =
+            "SELECT * FROM users WHERE user_id=:user_id";
+        $q = $conn->prepare($getQuery);
+        $q->bindParam(":user_id", $user_id);
+        $q->execute();
+        $c = $q->fetch();
+      if ($c) {
+        return $c;
+      }
+    } 
+    catch (PDOException $e) {
+      // Handle database query execution error
+      die("Database query failed: " . $e->getMessage());
+    }
+ }
 
   public function authenticate ($email, $password) {
     try{
