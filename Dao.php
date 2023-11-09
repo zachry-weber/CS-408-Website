@@ -34,7 +34,7 @@ class Dao {
     try{
       $conn = $this->getConnection();
       $getQuery =
-            "SELECT * FROM users WHERE user_id=:user_id";
+            sprintf("SELECT * FROM users WHERE user_id=:user_id");
         $q = $conn->prepare($getQuery);
         $q->bindParam(":user_id", $user_id);
         $q->execute();
@@ -42,6 +42,9 @@ class Dao {
         echo("works4");
       if ($c) {
         return $c;
+      }
+      else {
+        return false;
       }
     } 
     catch (PDOException $e) {
