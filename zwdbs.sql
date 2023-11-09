@@ -5,14 +5,6 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE comments (
-    comment_id INT PRIMARY KEY AUTO_INCREMENT,
-    comment TEXT NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    user_username VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_username) REFERENCES users(username)
-);
-
 CREATE TABLE posts (
     post_id INT PRIMARY KEY AUTO_INCREMENT,
     user_username VARCHAR(50) NOT NULL,

@@ -3,7 +3,7 @@ session_start();
 require_once "Dao.php";
 $dao = new Dao();
 if(!isset($_SESSION['authenticated'])) {
-    header('Location: /pages/signup.php');
+    header('Location: ../index.php');
     exit; 
   }
 if (isset($_SESSION["user_id"])){
