@@ -2,10 +2,10 @@
 session_start();
 require_once "Dao.php";
 $dao = new Dao();
-if(!isset($_SESSION['authenticated'])) {
-    header('Location: ../index.php');
-    exit; 
-  }
+// if(!isset($_SESSION['authenticated'])) {
+//     header('Location: ../index.php');
+//     exit; 
+//   }
 if (isset($_SESSION["user_id"])){
     $user = $dao->getUser($_SESSION["user_id"]);
 }
