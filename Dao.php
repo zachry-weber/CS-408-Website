@@ -39,6 +39,7 @@ class Dao {
         $q->bindParam(":user_id", $user_id);
         $q->execute();
         $c = $q->fetch();
+        echo("works4");
       if ($c) {
         return $c;
       }

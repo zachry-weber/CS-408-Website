@@ -1,11 +1,15 @@
 <?php
 session_start();
 require_once "../Dao.php";
+echo("works");
 if (isset($_SESSION['authenticated'])){
+    echo("works2");
     $name = getUser($_SESSION["user_id"]);
+    echo("works3");
     echo($name["username"]);
     
 }
+
 
 ?>
 
