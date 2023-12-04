@@ -15,11 +15,11 @@ if (isset($_POST['submit'])) {
     $allowed = array('jpg', 'jpeg', 'png');
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 320000) {
+            if ($fileSize < 3200000) {
                 $fileNameNew = uniqid('', true).".".$fileActualExt;
                 $fileDestination = '../uploads/'.$fileNameNew;
 		move_uploaded_file($fileTmpName, $fileDestination);
-                header("Location: ../pages/design.php?uploadsuccess");
+                header("Location: /pages/design.php?uploadsuccess");
             }
             else {
                 echo "Your file is too big!";
@@ -34,3 +34,5 @@ if (isset($_POST['submit'])) {
     }
 
 }
+
+?>
