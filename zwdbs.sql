@@ -5,6 +5,13 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE photos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    file_path VARCHAR(255) NOT NULL,
+    likes INT DEFAULT 0,
+    dislikes INT DEFAULT 0
+);
+
 CREATE TABLE posts (
     post_id INT PRIMARY KEY AUTO_INCREMENT,
     user_username VARCHAR(50) NOT NULL,

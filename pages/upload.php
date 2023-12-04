@@ -1,38 +1,22 @@
 <?php
 
-if (isset($_POST['submit'])) {
-    $file = $_FILES['file'];
-    print_r($file);
-    $fileName = $_FILES['file']['name'];
-    $fileTmpName = $_FILES['file']['tmp_name'];
-    $fileSize = $_FILES['file']['size'];
-    $fileError = $_FILES['file']['error'];
-    $fileType = $_FILES['file']['type'];
-    
-    $fileExt = explode('.', $fileName);
-    $fileActualExt = strtolower(end($fileExt));
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_FILES["file"]) && $_FILES["file"]["error"] == 0) {
+        $uploadDir = '../uploads/';
+        $uploadFile = $uploadDir . basename($_FILES["file"]["name"]);
 
-    $allowed = array('jpg', 'jpeg', 'png');
-    if (in_array($fileActualExt, $allowed)) {
-        if ($fileError === 0) {
-            if ($fileSize < 3200000) {
-                $fileNameNew = uniqid('', true).".".$fileActualExt;
-                $fileDestination = '../uploads/'.$fileNameNew;
-		move_uploaded_file($fileTmpName, $fileDestination);
-                header("Location: /pages/design.php?uploadsuccess");
-            }
-            else {
-                echo "Your file is too big!";
-            }
- 	}
-        else {
-             echo "There was an error uploading your file!";
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $uploadFile)) {
+            include '/pages/save_photo.php';
+            savePhoto($uploadFile);
+        } else {
+            echo "Error uploading file.";
         }
+    } else {
+        echo "Please select a file to upload.";
     }
-    else {
-       echo "You can't upload files of this type!";
-    }
-
 }
+
+header("Location: /pages/gallery.php");
+exit();
 
 ?>

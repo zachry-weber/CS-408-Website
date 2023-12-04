@@ -28,6 +28,11 @@ print_r($_SESSION);
     </div>
     <div class="gallery">
         <h2>Take a look at everyones awesome designs</h2>
+        <?php
+        // Display uploaded photos from the database
+        include '/pages/display_photos.php';
+        displayPhotos();
+        ?>
     </div>
     
     <footer>
