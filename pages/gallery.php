@@ -27,7 +27,7 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="gallery">
-        <h2>Take a look at everyones awesome designs</h2>
+        <h2>Which stick is your favorite?</h2>
         <?php
         // Display uploaded photos from the database
         include '/pages/display_photos.php';
