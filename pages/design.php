@@ -27,7 +27,7 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="designTop">
-        //<h2>Upload your photos here</h2>
+        /* <h2>Upload your photos here</h2> */
     </div>
     <div class="uploads">
         <form action="upload.php" method "POST" entype="multipart/form-data">
