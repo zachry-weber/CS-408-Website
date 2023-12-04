@@ -1,10 +1,10 @@
 <?php
 function savePhoto($filePath) {
     // Connection to the database
-    $servername = "localhost";
-    $username = "your_username";
-    $password = "your_password";
-    $dbname = "your_database";
+    $servername = "m7az7525jg6ygibs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    $username = "njmze3cticven8hp";
+    $password = "jr3iy2vu473w7pzb";
+    $dbname = "sr64mwgqty3s88b0";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
