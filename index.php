@@ -35,17 +35,17 @@ if (isset($_SESSION["user_id"])){
         <a href="/pages/signup.php" class="split">Sign Up</a>
 	<a href="/pages/login.php" class="split">Login</a>
     </div>
-    <div class="create">
-        <h2>Design custom stickers here!</h2>
-        <input type="button" value="Design Now" onclick="location='/pages/design.php'" />
-    </div>
     <div class="easy">
-        <h2>Create in 3 easy steps</h2>
+        <h2>How to use Stiggy</h2>
         <ul>
-            <li>1. Design and choose a template</li>
-            <li>2. Upload a Photo</li>
-            <li>3. View in Gallery</li>
+            <li>1. Find or take a picture of an interesting stick</li>
+            <li>2. Upload the photo</li>
+            <li>3. Vote on your favorite sticks</li>
         </ul>
+    </div>
+    <div class="create">
+        <h2>Upload your photos here!</h2>
+        <input type="button" value="Upload" onclick="location='/pages/design.php'" />
     </div>
     <div class="photo">
         <h2>Contact Me</h2>
