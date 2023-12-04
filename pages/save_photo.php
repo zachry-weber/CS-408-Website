@@ -5,9 +5,10 @@ function savePhoto($filePath) {
     $username = "njmze3cticven8hp";
     $password = "jr3iy2vu473w7pzb";
     $dbname = "sr64mwgqty3s88b0";
-
+    
+    echo "pre connect"
     $conn = new mysqli($servername, $username, $password, $dbname);
-
+    echo "connected"
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
