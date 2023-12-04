@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])){
     </header>
     <div class= "navb">
         <a href="../index.php">Home</a>
-        <a href="/pages/design.php">Design</a>
+        <a href="/pages/design.php">Upload</a>
         <a href="/pages/gallery.php">Gallery</a>
  	<a href="/pages/about.php">About</a>
         <a href="/pages/signup.php" class="split">Sign Up</a>

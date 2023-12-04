@@ -15,27 +15,25 @@ print_r($_SESSION);
 </head>
 <body>
     <header class="head">
-        <h1>Design and Choose Your Template Here!</h1>
+        <h1>Upload Your Photos Here!</h1>
         <img src="../StiggyLogo.png" alt="logo" width="100" height="100" class="style-image">
     </header>
     <div class= "navb">
         <a href="../index.php">Home</a>
-        <a href="/pages/design.php">Design</a>
+        <a href="/pages/design.php">Upload</a>
         <a href="/pages/gallery.php">Gallery</a>
         <a href="/pages/about.php">About</a>
         <a href="/pages/signup.php" class="split">Signup</a>
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="designTop">
-        <h2>Choose your favorite template</h2>
+        //<h2>Upload your photos here</h2>
     </div>
-    <div class="templates">
-        <ul>
-            <li>Square</li>
-            <li>Circle</li>
-            <li>Ellipse</li>
-            <li>Rectangle</li>
-        </ul>
+    <div class="uploads">
+        <form action="upload.php" method "POST" entype="multipart/form-data">
+	    <input type="file" name="file">
+	    <button type="submit" name="submit">Upload Image</button>
+    	</form>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
