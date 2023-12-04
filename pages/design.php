@@ -30,7 +30,7 @@ print_r($_SESSION);
         // <h2>Upload your photos here</h2>
     </div>
     <div class="uploads">
-        <form action="upload.php" method "POST" enctype="multipart/form-data">
+        <form action="/pages/upload.php" method "POST" enctype="multipart/form-data">
 	    <input type="file" name="file">
 	    <button type="submit" name="submit">Upload Image</button>
     	</form>
