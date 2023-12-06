@@ -5,7 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = htmlspecialchars($_POST['content']);
 
     echo($content);
-    
+    echo "passes";
+    exit; 
     if (empty($content)) {
         echo($content);
         echo "Please enter text";
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     require_once '../Dao.php';
     $dao = new Dao();
-    echo "passed1"
+    echo "passed1";
     exit; 
     $success = $dao->addComment($userId, $content);
     $_SESSION['post_created'] = true;
