@@ -33,7 +33,7 @@ else {
     echo "Invalid request method.";
     exit;
 }
-    function renderReplies($mostRecentComment)
+    function renderReplies($mostRecentComment) {
     ob_start(); // Start output buffering
         <div id="repliesContainer" class="section-container">
             <section class="section">
