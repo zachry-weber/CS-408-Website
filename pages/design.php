@@ -3,7 +3,28 @@ session_start();
 print_r($_SESSION);
 
 //require_once("/pages/upload.php");
-
+if (isset($_POST['upload'])) {
+ 
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $_FILES["uploadfile"]["tmp_name"];
+    $folder = "./uploads/" . $filename;
+ 
+    $db = mysqli_connect("m7az7525jg6ygibs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", 
+        "njmze3cticven8hp", "jr3iy2vu473w7pzb", "sr64mwgqty3s88b0");
+ 
+    // Get all the submitted data from the form
+    $sql = "INSERT INTO photos (file_path) VALUES ('$filename')";
+ 
+    // Execute query
+    mysqli_query($db, $sql);
+ 
+    // Now let's move the uploaded image into the folder: image
+    if (move_uploaded_file($tempname, $folder)) {
+        echo "<h3>  Image uploaded successfully!</h3>";
+    } else {
+        echo "<h3>  Failed to upload image!</h3>";
+    }
+}
 
 ?>
 
@@ -38,10 +59,23 @@ print_r($_SESSION);
         // <h2>Upload your photos here</h2>
     </div>
     <div class="uploads">
-        <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="my_image" required>
+        <form action="" method="POST" enctype="multipart/form-data">
+	    <input type="file" name="uploadfile" value="" required>
 	    <button type="submit" name="submit">Upload Image</button>
     	</form>
+    </div>
+    <div id="display-image">
+        <?php
+        $query = " select * from photos ";
+        $result = mysqli_query($db, $query);
+ 
+        while ($data = mysqli_fetch_assoc($result)) {
+        ?>
+            <img src="./uploads/<?php echo $data['file_path']; ?>">
+ 
+        <?php
+        }
+        ?>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
