@@ -1,0 +1,27 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = htmlspecialchars($_POST['title']);
+    $content = htmlspecialchars($_POST['content']);
+
+    if (empty($title) || empty($content)) {
+        echo "Please enter text";
+        exit;
+    }
+
+    require_once '../Dao.php';
+    $dao = new Dao();
+    
+    $userId = $_SESSION['user_id'];
+    $dao->addComment($userId, $content);
+    
+    $_SESSION['post_created'] = true;
+    header('Location: /pages/gallery.php');
+    exit;
+} else {
+    // Handle other HTTP methods if needed
+    echo "Invalid request method.";
+    exit;
+}
+?>

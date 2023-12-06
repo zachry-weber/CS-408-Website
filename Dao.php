@@ -85,6 +85,46 @@ class Dao {
     }
  }
 
+  public function addComment($userId, $content) {
+      $conn = $this->getConnection();
+      $saveQuery = "INSERT INTO comments (user_id, Content) VALUES (:userId, :content)";
+      $q = $conn->prepare($saveQuery);
+      $q->bindParam(":userId", $userId);
+      $q->bindParam(":content", $content);
+      $q->execute();
+  }
+  
+  public function getMostRecentComment() {
+    $conn = $this->getConnection();
+    $query = "SELECT * FROM comments ORDER BY CreatedAt DESC LIMIT 1";
+    $result = $conn->query($query);
+
+    if ($result && $result->rowCount() > 0) {
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
+    return null;
+  }
+
+  public function getCommentById($postid){
+    $conn = $this->getConnection();
+        $saveQuery =
+            sprintf("SELECT * FROM comments
+            WHERE com_id = :postid");
+        $q = $conn->prepare($saveQuery);
+        $q->bindParam(":postid", $postid);
+        $q->execute();
+        $post = $q->fetch(PDO::FETCH_ASSOC);
+
+        if($post){
+          return $post;
+        }
+        else {
+          return FALSE;
+        }
+      return FALSE;
+  }
+
 }
 
 ?>

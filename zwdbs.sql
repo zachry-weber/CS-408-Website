@@ -12,6 +12,14 @@ CREATE TABLE photos (
     dislikes INT DEFAULT 0
 );
 
+CREATE TABLE comments (
+    com_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT, 
+    Content TEXT NOT NULL,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
 CREATE TABLE posts (
     post_id INT PRIMARY KEY AUTO_INCREMENT,
     user_username VARCHAR(50) NOT NULL,
