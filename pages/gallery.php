@@ -33,7 +33,7 @@ $mostRecentComment = $dao->getMostRecentComment();
     </div>
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
-            <form class="create-user-form" method="post" action="../pages/createComment_handler.php">
+            <form  method="post" action="../pages/createComment_handler.php">
                 <div style="text-align: center;"><label for="content">Comment:</label></Br>
                 <textarea id="content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
                 <input type="submit" value="Submit Comment">
