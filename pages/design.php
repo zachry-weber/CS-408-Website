@@ -15,6 +15,58 @@ print_r($_SESSION);
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style>
+        .designTop {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .uploads {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .uploads form {
+            margin-bottom: 20px;
+        }
+
+        .uploads input {
+            margin-bottom: 10px;
+        }
+
+        .uploads button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .uploads button:hover {
+            background-color: #45a049;
+        }
+
+        .uploads h2 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .uploads img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <?php if (isset($_GET['error'])): ?>
@@ -34,14 +86,14 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="designTop">
-        <h1>Select an image you would like to display</h1>
+        <h2>Select an image you would like to display</h2>
     </div>
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
 	    <input type="file" name="fileToUpload" id="fileToUpload">
             <button type="submit" name="submit">Upload Image</button>
         </form>
-        <h1>Display uploaded Image:</h1>
+        <h2>Display uploaded Image:</h2>
         <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
             <img src="<?php echo $targetFile; ?>" alt="Uploaded Image">
         <?php endif; ?>
