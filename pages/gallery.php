@@ -36,13 +36,13 @@ $mostRecentComment = $dao->getMostRecentComment();
         <img src="../coolstick.png" alt="fakestig">
         <img src="../realstick-png.webp" alt="realstig">
         <img src="../minecraftstick.webp" alt="minecraftstig">
-            <form  method="post" action="../pages/createComment_handler.php">
+            <form  class="reply-form" method="post" action="../pages/createComment_handler.php">
                 <div style="text-align: center;"><label for="content">Comment:</label></Br>
                 <textarea id="content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
                 <input type="submit" value="Submit Comment">
             </form>
     </div>
-    <div class="section-container">
+    <div id="repliesContainer" class="section-container">
             <section class="section">
             <?php if ($mostRecentComment): ?>
                 <p><?= $mostRecentComment['Content'] ?></p>
@@ -62,7 +62,7 @@ $mostRecentComment = $dao->getMostRecentComment();
                 // Perform AJAX call
                 $.ajax({
                     type: 'POST',
-                    url: '../handlers/reply-handler.php',
+                    url: '../pages/createComment_handler.php',
                     data: formData,
                     dataType: 'json', // Specify that the expected response is JSON
                     success: function (response) {
@@ -74,8 +74,8 @@ $mostRecentComment = $dao->getMostRecentComment();
                             // Update the replies section with the new HTML
                             $('#repliesContainer').html(response.replies);
 
-                            $('.reply-form').toggle();
-                            $('#reply_content').val('');
+                            //$('.reply-form').toggle();
+                            $('#content').val('');
                         } else {
                             console.error('Failed to add reply. Error message: ' + response.message);
                         }
