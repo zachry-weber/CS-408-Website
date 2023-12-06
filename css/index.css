@@ -114,3 +114,9 @@
         margin-left: 25%; 
     }
 
+    .gallery section-container{
+        display: flex; /* Use Flexbox to line up sections horizontally */
+        justify-content: space-between; /* Space them evenly */
+        max-width: 1200px; /* Optionally, set a max width for the container */
+        margin: 0 auto;
+    }

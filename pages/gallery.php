@@ -43,7 +43,6 @@ $mostRecentComment = $dao->getMostRecentComment();
             </form>
     </div>
     <div class="section-container">
-        <p><?= $mostRecentComment['com_id'] ?>
             <section class="section">
             <?php if ($mostRecentComment): ?>
                 <p><?= $mostRecentComment['Content'] ?></p>
@@ -53,6 +52,42 @@ $mostRecentComment = $dao->getMostRecentComment();
             </section>
         
     </div>
+    <script>
+        $('.reply-form').submit(function (e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Serialize form data
+                var formData = $(this).serialize();
+
+                // Perform AJAX call
+                $.ajax({
+                    type: 'POST',
+                    url: '../handlers/reply-handler.php',
+                    data: formData,
+                    dataType: 'json', // Specify that the expected response is JSON
+                    success: function (response) {
+                        // Handle the success response
+                        console.log('Reply submitted successfully');
+                        console.log(response);
+
+                        if (response.success) {
+                            // Update the replies section with the new HTML
+                            $('#repliesContainer').html(response.replies);
+
+                            $('.reply-form').toggle();
+                            $('#reply_content').val('');
+                        } else {
+                            console.error('Failed to add reply. Error message: ' + response.message);
+                        }
+                    },
+                    error: function (error) {
+                        // Handle errors if any
+                        console.error('Error submitting reply');
+                        console.error(error);
+                    }
+                });
+            });
+    </script>
 
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
