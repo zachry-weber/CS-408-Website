@@ -93,6 +93,9 @@ print_r($_SESSION);
 	    <input type="file" name="image" id="file">
             <button type="submit" name="submit">Upload Image</button>
         </form>
+        <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
+            <img src="<?php echo $targetFile; ?>" alt="Uploaded Image">
+        <?php endif; ?>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
