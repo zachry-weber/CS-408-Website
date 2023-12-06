@@ -34,7 +34,7 @@ print_r($_SESSION);
         <a href="/pages/login.php" class="split">Login</a>
     </div>
     <div class="designTop">
-        // <h2>Upload your photos here</h2>
+        <h1>Select an image you would like to display</h1>
     </div>
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
