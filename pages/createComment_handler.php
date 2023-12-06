@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo($content);
     
     if (empty($content)) {
+        echo($content);
         echo "Please enter text";
         exit;
     }
