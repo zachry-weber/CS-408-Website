@@ -45,7 +45,7 @@ if ($uploadOk == 0) {
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
-  header("Location: /pages/gallery.php");
-  exit();
+  //header("Location: /pages/gallery.php");
+  //exit();
 }
 ?>
