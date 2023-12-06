@@ -2,8 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = htmlspecialchars($_POST['title']);
-    $content = htmlspecialchars($_POST['content']);
+    $content = htmlspecialchars($_POST['Content']);
 
     if (empty($title) || empty($content)) {
         echo "Please enter text";

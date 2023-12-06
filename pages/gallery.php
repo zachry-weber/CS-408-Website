@@ -1,7 +1,9 @@
 <?php
 session_start();
 print_r($_SESSION);
-//include "../Dao.php";
+require_once "../Dao.php";
+$dao = new dao();
+
 ?>
 
 <!DOCTYPE html>
