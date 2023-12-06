@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     require_once '../Dao.php';
     $dao = new Dao();
+    $userId = $_SESSION['user_id'];
     $success = $dao->addComment($userId, $content);
     $_SESSION['post_created'] = true;
     if ($success) {
