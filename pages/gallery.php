@@ -1,6 +1,7 @@
 <?php
 session_start();
 print_r($_SESSION);
+include "../Dao.php";
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +29,18 @@ print_r($_SESSION);
     </div>
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
-        <?php
-        // Display uploaded photos from the database
-        include '/pages/display_photos.php';
-        displayPhotos();
-        ?>
+        <?php 
+            $sql = "SELECT * FROM images ORDER BY id DESC";
+            $res = mysqli_query($conn,  $sql);
+
+            if (mysqli_num_rows($res) > 0) {
+                while ($images = mysqli_fetch_assoc($res)) {  ?>
+             
+             <div class="alb">
+                 <img src="uploads/<?=$images['file_path']?>">
+             </div>
+          		
+        <?php } }?>
     </div>
     
     <footer>
