@@ -15,30 +15,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once '../Dao.php';
     $dao = new Dao();
     
-    $dao->addComment($userId, $content);
+    $success = $dao->addComment($userId, $content);
     $_SESSION['post_created'] = true;
+    if ($success) {
+        // Fetch updated replies
+        $mostRecentComment = $dao->getMostRecentComment();
 
-    function renderReplies($replies) {
-    ob_start(); // Start output buffering
-
-    if (is_array($replies)) {
-        foreach ($replies as $reply) {
-            ?>
-            <div>
-                <section class="section">
-                    <h2>Reply</h2></Br>
-                    <p><?= $reply['Content'] ?></p></Br>
-                    <p>Posted by User ID: <?= $reply['Username'] ?></p>
-                    <!-- Add more details or formatting as needed -->
-                </section>
-            </div>
-            <?php
-        }
+        // Output success status and updated replies HTML
+        echo json_encode(array('success' => true, 'replies' => renderReplies($mostRecentComment)));
     } else {
-        ?>
-        <p>No replies available</p>
-        <?php
+        // Output failure status
+        echo json_encode(array('success' => false, 'message' => 'Failed to add reply.'));
     }
+}
+else {
+    // Handle other HTTP methods if needed
+    echo "Invalid request method.";
+    exit;
+}
+    function renderReplies($mostRecentComment)
+    ob_start(); // Start output buffering
+        <div id="repliesContainer" class="section-container">
+            <section class="section">
+            <?php if ($mostRecentComment): ?>
+                <p><?= $mostRecentComment['Content'] ?></p>
+            <?php else: ?>
+                <p>No posts available</p>
+            <?php endif; ?>
+            </section>
+
+        </div>   
 
         return ob_get_clean(); // Return the buffered output as a string
     }
@@ -47,9 +53,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //$_SESSION['post_created'] = true;
     //header('Location: /pages/gallery.php');
     //exit;
-} else {
-    // Handle other HTTP methods if needed
-    echo "Invalid request method.";
-    exit;
-}
 ?>
