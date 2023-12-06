@@ -13,6 +13,15 @@ session_start();
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
         .login {
             background-color: #ffffff;
             padding: 20px;
