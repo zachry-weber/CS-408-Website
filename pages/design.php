@@ -94,6 +94,8 @@ if (isset($_POST["submit"])) {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
+            margin-left: 38%;
+            margin-top: 4%;
         }
 
         .uploads form {
@@ -146,10 +148,8 @@ if (isset($_POST["submit"])) {
         <a href="/pages/signup.php" class="split">Signup</a>
         <a href="/pages/login.php" class="split">Login</a>
     </div>
-    <div class="designTop">
-        <h2>Select an image you would like to display</h2>
-    </div>
     <div class="uploads">
+        <h2>Select an image you would like to display</h2>
         <form action="" method="POST" enctype="multipart/form-data">
 	    <input type="file" name="image" id="file">
             <button type="submit" name="submit">Upload Image</button>

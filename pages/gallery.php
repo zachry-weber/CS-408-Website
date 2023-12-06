@@ -43,7 +43,7 @@ $mostRecentComment = $dao->getMostRecentComment();
             </form>
     </div>
     <div class="section-container">
-        <p><?= $mostRecentComment['com_id'] ?>">
+        <p><?= $mostRecentComment['com_id'] ?>
             <section class="section">
             <?php if ($mostRecentComment): ?>
                 <p><?= $mostRecentComment['Content'] ?></p>
