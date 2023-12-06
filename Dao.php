@@ -5,7 +5,6 @@ class Dao {
   private $user = "njmze3cticven8hp";
   private $pass = "jr3iy2vu473w7pzb";
   
-  $conn = mysqli_connect($host, $user, $pass, $db);
 
   public function getConnection () {
     return

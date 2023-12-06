@@ -29,18 +29,6 @@ include "../Dao.php";
     </div>
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
-        <?php 
-            $sql = "SELECT * FROM images ORDER BY id DESC";
-            $res = mysqli_query($conn,  $sql);
-
-            if (mysqli_num_rows($res) > 0) {
-                while ($images = mysqli_fetch_assoc($res)) {  ?>
-             
-             <div class="alb">
-                 <img src="uploads/<?=$images['file_path']?>">
-             </div>
-          		
-        <?php } }?>
     </div>
     
     <footer>
