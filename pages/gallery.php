@@ -30,30 +30,8 @@ include "../Dao.php";
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
     </div>
-    <?php
-        session_start(); 
-        require __DIR__ . "../Dao.php";
-
-        $user_id = $_SESSION["user_id"];
-        $sql = "SELECT * FROM photos ORDER BY id DESC";
-
-        $stmt = mysqli_stmt_init($mysqli);
-            
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "SQL statement failed!";
-        } else {
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<a href="#" class="photo-link">
-                    <div>
-                        <img src="../uploads/' . $row["imgFullNameGallery"] . '">
-                    </div>
-                </a>';
-            }
-        }
-    ?>
     
+
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
     </footer>

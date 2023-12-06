@@ -2,84 +2,64 @@
 session_start();
 include_once "../Dao.php";
 
-$erros = array();
+if (isset($_POST["submit"])) {
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newFileName = $_POST['filename'];
-    if (empty($newFileName)) {
-        $newFileName = "gallery";
-    } else {
-        $newFileName = strtolower(str_replace(" ", "-", $newFileName));
-    }
-    $imageTitle = $_POST['filetitle'];
-    $imageDesc = $_POST['filedesc'];
+    // Check image using getimagesize function and get size
+    // if a valid number is got then uploaded file is an image
+    if (isset($_FILES["image"])) {
+        // directory name to store the uploaded image files
+        // this should have sufficient read/write/execute permissions
+        // if not already exists, please create it in the root of the
+        // project folder
+        $targetDir = "uploads/";
+        $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-    $file = $_FILES['file'];
-
-    // Extract the file properties
-    $fileName = $file['name'];
-    $fileType = $file['type'];
-    $fileTemp = $file['tmp_name'];
-    $fileError = $file['error'];
-    $fileSize = $file['size'];
-
-    // Extract the file extension
-    $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
-    $fileActualExt = strtolower($fileExt);
-
-    // Allow only certain file types
-    $allowed = array("jpg", "jpeg", "png");
-
-    if (in_array($fileActualExt, $allowed)) {
-        if ($fileError === 0) {
-            if ($fileSize < 2000000) { // 2 MB limit
-                $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
-                $fileDestination = "../uploads/" . $imageFullName;
-
-                include_once "../Dao.php";
-
-                if (empty($imageTitle) || empty($imageDesc)) {
-                    header("Location: ../pages/design.php");
-                    exit();
-                } else {
-                    $sql = "SELECT * FROM photos;";
-                    $stmt = mysqli_stmt_init($mysqli);
-                    if (!mysqli_stmt_prepare($stmt, $sql)) {
-                        echo "SQL statement failed!";
-                    } else {
-                        mysqli_stmt_execute($stmt);
-                        $result = mysqli_stmt_get_result($stmt);
-                        $rowCount = mysqli_num_rows($result);
-                        $setImageOrder = $rowCount + 1;
-
-                        $sql = "INSERT INTO photos (imgFullNameGallery) VALUES (?, ?, ?, ?);";
-
-                        if (!mysqli_stmt_prepare($stmt, $sql)) {
-                            echo "SQL statement failed!";
-                        } else {
-                            mysqli_stmt_bind_param($stmt, "sssss", $imageTitle, $imageDesc, $imageFullName, $setImageOrder, $_SESSION["user_id"]);
-                            mysqli_stmt_execute($stmt);
-
-                            move_uploaded_file($fileTemp, $fileDestination);
-
-                            header("Location: ../pages/gallery.php?upload=success");
-                            exit();
-                        }
-                    }
-                }
-            } else {
-                $errors[] = "Your file is too big!";
-                
-            }
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
         } else {
-            $errors[] = "Error: No Title or Description or FileName!";
-            
+            echo "File is not an image.";
+            $uploadOk = 0;
         }
-    } else {
-        $errors[] = "You need to upload a proper file type (jpg, jpeg, or png)!";
-        
     }
 
+    // Check if the file already exists in the same path
+    if (file_exists($targetFile)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+
+    // Check file size and throw error if it is greater than
+    // the predefined value, here it is 500000
+    if ($_FILES["image"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    // Check for uploaded file formats and allow only 
+    // jpg, png, jpeg and gif
+    // If you want to allow more formats, declare it here
+    if (
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
   //header("Location: /pages/gallery.php");
   //exit();
 }

@@ -90,7 +90,7 @@ print_r($_SESSION);
     </div>
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="file" id="file">
+	    <input type="file" name="image" id="file">
             <button type="submit" name="submit">Upload Image</button>
         </form>
     </div>
