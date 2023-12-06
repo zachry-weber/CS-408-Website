@@ -2,41 +2,7 @@
 session_start();
 print_r($_SESSION);
 
-//test
 //require_once("/pages/upload.php");
-if (isset($_POST["submit"])) {
-
-    if(isset($_FILES['image'])){
-      $errors= array();
-
-      $dir = "uploads/";
-      $file_name = $_FILES['image']['name'];
-      $file_name = $dir. $file_name;
-      $file_size = $_FILES['image']['size'];
-      $file_tmp = $_FILES['image']['tmp_name'];
-      $file_type = $_FILES['image']['type'];
-      $tmp = explode('.',$_FILES['image']['name']);
-      $file_ext=strtolower(end($tmp));
-      
-      $extensions= array("jpeg","jpg","png","gif");
-      
-      if(in_array($file_ext,$extensions)=== false){
-         $errors[]="extension not allowed, please choose a GIF, JPEG or PNG file.";
-      }
-      
-      if($file_size > 2097152) {
-         $errors[]='File size must be excately 2 MB';
-      }
-      
-      if(empty($errors)==true) {
-         move_uploaded_file($file_tmp, $file_name);
-         echo "Success";
-      }else{
-         print_r($errors);
-      }
-   }
-
-}
 
 ?>
 
@@ -71,13 +37,13 @@ if (isset($_POST["submit"])) {
         // <h2>Upload your photos here</h2>
     </div>
     <div class="uploads">
-        <form action="" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="image" required>
-	    <button type="submit" name="submit">Upload Image</button>
+        <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
+	    <input type="file" name="fileToUpload" id="fileToUpload>
+	    <input type="submit" value="Upload Image" name="submit">
     	</form>
         <h1>Display uploaded Image:</h1>
-        <?php if (isset($_FILES["image"])) : ?>
-            <img src="<?php echo $file_name; ?>" alt="Uploaded Image">
+        <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
+            <img src="<?php echo $targetFile; ?>" alt="Uploaded Image">
         <?php endif; ?>
     </div>
     <footer>
