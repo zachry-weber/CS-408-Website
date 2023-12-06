@@ -36,7 +36,7 @@ $mostRecentComment = $dao->getMostRecentComment();
         <img src="../coolstick.png" alt="fakestig">
         <img src="../realstick-png.webp" alt="realstig">
         <img src="../minecraftstick.webp" alt="minecraftstig">
-            <form  class="reply-form" method="post" action="../pages/createComment_handler.php">
+            <form  class="reply-form" method="post" id="commentForm">
                 <div style="text-align: center;"><label for="content">Comment:</label></Br>
                 <textarea id="content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
                 <input type="submit" value="Submit Comment">
@@ -57,41 +57,45 @@ $mostRecentComment = $dao->getMostRecentComment();
         &copy; 2023 Stiggy Thank You For Visiting!
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $('.reply-form').submit(function (e) {
-                e.preventDefault(); // Prevent the default form submission
+<script>
+    $(document).ready(function () {
+        $('#commentForm').submit(function (e) {
+            e.preventDefault(); // Prevent the default form submission
 
-                // Serialize form data
-                var formData = $(this).serialize();
+            // Serialize form data
+            var formData = $(this).serialize();
 
-                // Perform AJAX call
-                $.ajax({
-                    type: 'POST',
-                    url: '../pages/createComment_handler.php',
-                    data: formData,
-                    dataType: 'json', // Specify that the expected response is JSON
-                    success: function (response) {
-                        // Handle the success response
-                        console.log('Reply submitted successfully');
-                        console.log(response);
+            // Perform AJAX call
+            $.ajax({
+                type: 'POST',
+                url: '../pages/createComment_handler.php',
+                data: formData,
+                dataType: 'json', // Specify that the expected response is JSON
+                success: function (response) {
+                    // Handle the success response
+                    console.log('Reply submitted successfully');
+                    console.log(response);
 
-                        if (response.success) {
-                            // Update the replies section with the new HTML
-                            $('#repliesContainer').html(response.replies);
+                    if (response.success) {
+                        // Update the replies section with the new HTML
+                        $('#repliesContainer').html(response.replies);
 
-                            //$('.reply-form').toggle();
-                            $('#content').val('');
-                        } else {
-                            console.error('Failed to add reply. Error message: ' + response.message);
-                        }
-                    },
-                    error: function (error) {
-                        // Handle errors if any
-                        console.error('Error submitting reply');
-                        console.error(error);
+                        // Clear the textarea
+                        $('#content').val('');
+                    } else {
+                        console.error('Failed to add reply. Error message: ' + response.message);
                     }
-                });
+                },
+                error: function (error) {
+                    // Handle errors if any
+                    console.error('Error submitting reply');
+                    console.error(error);
+                }
             });
-    </script>
+
+            return false; // Prevent the form from submitting traditionally
+        });
+    });
+</script>
 </body>
 </html>
