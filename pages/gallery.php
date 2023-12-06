@@ -52,6 +52,7 @@ $mostRecentComment = $dao->getMostRecentComment();
             </section>
         
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $('.reply-form').submit(function (e) {
                 e.preventDefault(); // Prevent the default form submission
