@@ -90,13 +90,9 @@ print_r($_SESSION);
     </div>
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="fileToUpload" id="fileToUpload">
+	    <input type="file" name="file" id="file">
             <button type="submit" name="submit">Upload Image</button>
         </form>
-        <h2>Display uploaded Image:</h2>
-        <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
-            <img src="<?php echo $targetFile; ?>" alt="Uploaded Image">
-        <?php endif; ?>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!

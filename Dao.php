@@ -4,7 +4,13 @@ class Dao {
   private $db = "sr64mwgqty3s88b0";
   private $user = "njmze3cticven8hp";
   private $pass = "jr3iy2vu473w7pzb";
-  
+
+  $mysqli = new mysqli($host, $user, $pass, $db);
+  if($mysqli->connect_errno) {
+      die("Connection failed: " . $mysqli->connect_error);
+  }
+
+  return $mysqli;  
 
   public function getConnection () {
     return
