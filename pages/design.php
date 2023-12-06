@@ -1,7 +1,7 @@
 <?php
 session_start();
 print_r($_SESSION);
-
+//test
 //require_once("/pages/upload.php");
 if (isset($_POST["submit"])) {
 
