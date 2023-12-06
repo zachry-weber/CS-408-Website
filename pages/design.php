@@ -3,26 +3,63 @@ session_start();
 print_r($_SESSION);
 
 //require_once("/pages/upload.php");
-if (isset($_POST['upload'])) {
- 
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./uploads/" . $filename;
- 
-    $db = mysqli_connect("m7az7525jg6ygibs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", 
-        "njmze3cticven8hp", "jr3iy2vu473w7pzb", "sr64mwgqty3s88b0");
- 
-    // Get all the submitted data from the form
-    $sql = "INSERT INTO photos (file_path) VALUES ('$filename')";
- 
-    // Execute query
-    mysqli_query($db, $sql);
- 
-    // Now let's move the uploaded image into the folder: image
-    if (move_uploaded_file($tempname, $folder)) {
-        echo "<h3>  Image uploaded successfully!</h3>";
+if (isset($_POST["submit"])) {
+
+    // Check image using getimagesize function and get size
+    // if a valid number is got then uploaded file is an image
+    if (isset($_FILES["image"])) {
+        // directory name to store the uploaded image files
+        // this should have sufficient read/write/execute permissions
+        // if not already exists, please create it in the root of the
+        // project folder
+        $targetDir = "/uploads/";
+        $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+
+    // Check if the file already exists in the same path
+    if (file_exists($targetFile)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+
+    // Check file size and throw error if it is greater than
+    // the predefined value, here it is 500000
+    if ($_FILES["image"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    // Check for uploaded file formats and allow only 
+    // jpg, png, jpeg and gif
+    // If you want to allow more formats, declare it here
+    if (
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
     } else {
-        echo "<h3>  Failed to upload image!</h3>";
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
     }
 }
 
@@ -60,22 +97,13 @@ if (isset($_POST['upload'])) {
     </div>
     <div class="uploads">
         <form action="" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="uploadfile" value="" required>
+	    <input type="file" name="image" required>
 	    <button type="submit" name="submit">Upload Image</button>
     	</form>
-    </div>
-    <div id="display-image">
-        <?php
-        $query = " select * from photos ";
-        $result = mysqli_query($db, $query);
- 
-        while ($data = mysqli_fetch_assoc($result)) {
-        ?>
-            <img src="./uploads/<?php echo $data['file_path']; ?>">
- 
-        <?php
-        }
-        ?>
+        <h1>Display uploaded Image:</h1>
+        <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
+            <img src="<?php echo $targetFile; ?>" alt="Uploaded Image">
+        <?php endif; ?>
     </div>
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
