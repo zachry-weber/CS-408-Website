@@ -40,7 +40,7 @@ print_r($_SESSION);
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
 	    <input type="file" name="my_image" required>
-	    <input type="submit" name="submit" value="Upload Image>
+	    <button type="submit" name="submit">Upload Image</button>
     	</form>
     </div>
     <footer>
