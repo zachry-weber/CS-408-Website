@@ -2,6 +2,7 @@
 session_start();
 print_r($_SESSION);
 
+//ok
 //require_once("/pages/upload.php");
 if (isset($_POST["submit"])) {
 
