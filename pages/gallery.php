@@ -33,7 +33,7 @@ $mostRecentComment = $dao->getMostRecentComment();
     </div>
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
-        <img src="../minecraftstick.png" alt="craft">
+        <img src="../minecraftstick.webp" alt="craft">
         <img src="../coolstick.png" alt="fake">
         <img src="../realstick-png.webp" alt="real">
             <form  method="post" action="../pages/createComment_handler.php">
