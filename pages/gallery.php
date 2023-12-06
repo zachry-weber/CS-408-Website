@@ -1,7 +1,7 @@
 <?php
 session_start();
 print_r($_SESSION);
-include "../Dao.php";
+//include "../Dao.php";
 ?>
 
 <!DOCTYPE html>
