@@ -52,6 +52,10 @@ $mostRecentComment = $dao->getMostRecentComment();
             </section>
         
     </div>
+
+    <footer>
+        &copy; 2023 Stiggy Thank You For Visiting!
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $('.reply-form').submit(function (e) {
@@ -89,9 +93,5 @@ $mostRecentComment = $dao->getMostRecentComment();
                 });
             });
     </script>
-
-    <footer>
-        &copy; 2023 Stiggy Thank You For Visiting!
-    </footer>
 </body>
 </html>
