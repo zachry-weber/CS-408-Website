@@ -38,7 +38,7 @@ $mostRecentComment = $dao->getMostRecentComment();
         <img src="../minecraftstick.webp" alt="minecraftstig">
             <form  method="post" action="../pages/createComment_handler.php">
                 <div style="text-align: center;"><label for="content">Comment:</label></Br>
-                <textarea id="Content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
+                <textarea id="content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
                 <input type="submit" value="Submit Comment">
             </form>
     </div>

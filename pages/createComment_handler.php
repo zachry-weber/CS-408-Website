@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $content = htmlspecialchars($_POST['Content']);
+    $content = htmlspecialchars($_POST['content']);
 
     echo($content);
     
