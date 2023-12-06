@@ -4,6 +4,8 @@ print_r($_SESSION);
 require_once "../Dao.php";
 $dao = new dao();
 
+$mostRecentComment = $dao->getMostRecentComment();
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +42,8 @@ $dao = new dao();
     <div class="section-container">
         <p><?= $mostRecentComment['com_id'] ?>">
             <section class="section">
-            <?php if ($mostRecentPost): ?>
-                <p><?= $mostRecentPost['Content'] ?></p>
+            <?php if ($mostRecentComment): ?>
+                <p><?= $mostRecentComment['Content'] ?></p>
             <?php else: ?>
                 <p>No posts available</p>
             <?php endif; ?>
