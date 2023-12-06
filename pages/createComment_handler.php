@@ -4,6 +4,8 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $content = htmlspecialchars($_POST['Content']);
 
+    echo($content);
+    
     if (empty($content)) {
         echo "Please enter text";
         exit;
