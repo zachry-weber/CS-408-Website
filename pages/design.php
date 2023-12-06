@@ -39,7 +39,7 @@ print_r($_SESSION);
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
 	    <input type="file" name="fileToUpload" id="fileToUpload>
-    	    <button type="submit">Upload</button>
+            <input type="submit" name="submit" value="Upload">
         </form>
         <h1>Display uploaded Image:</h1>
         <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
