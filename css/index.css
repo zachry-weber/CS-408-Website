@@ -108,3 +108,8 @@
     .gallery h2{
         text-align: center;
     }
+
+    .gallery img {
+        align-items: center;
+    }
+

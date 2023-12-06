@@ -33,7 +33,6 @@ $mostRecentComment = $dao->getMostRecentComment();
     </div>
     <div class="gallery">
         <h2>Which stick is your favorite?</h2>
-        <img src="../pencilstick.png" alt="stig">
         <img src="../coolstick.png" alt="fakestig">
         <img src="../realstick-png.webp" alt="realstig">
         <img src="../minecraftstick.webp" alt="minecraftstig">
