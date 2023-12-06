@@ -38,8 +38,8 @@ print_r($_SESSION);
     </div>
     <div class="uploads">
         <form action="/pages/upload.php" method="POST" enctype="multipart/form-data">
-	    <input type="file" name="fileToUpload" id="fileToUpload>
-            <button type="submit" name="submit">Upload</button>
+	    <input type="file" name="fileToUpload" id="fileToUpload">
+            <button type="submit" name="submit">Upload Image</button>
         </form>
         <h1>Display uploaded Image:</h1>
         <?php if (isset($_FILES["image"]) && $uploadOk == 1) : ?>
