@@ -12,6 +12,55 @@ session_start();
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style>
+        .login {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login h2 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .login form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login label {
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .login input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        .login button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header class="head">
@@ -29,15 +78,15 @@ session_start();
     <div class="login">
         <h2>Login</h2>
         <form method="post" action="login_handler.php">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email"
-               value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"
+                value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
         
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
         
-        <button>Log in</button>
-    </form>
+            <button>Log in</button>
+        </form>
     </div>
     <footer>
         &copy; 2023 Stiggy
