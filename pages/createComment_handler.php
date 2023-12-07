@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //$userId = $_SESSION['user_id'];
     $dao->addComment($userId, $content);
     $_SESSION['post_created'] = true;
-    header('Location: /pages/gallery.php');
-    exit;
+    //header('Location: /pages/gallery.php');
+    //exit;
 
     $success = $dao->addComment($userId, $content);
     $_SESSION['post_created'] = true;
