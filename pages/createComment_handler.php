@@ -38,19 +38,21 @@ else {
     echo "Invalid request method.";
     exit;
 }
-    function renderReplies($mostRecentComment) {
-    ob_start(); // Start output buffering
-        <div id="repliesContainer" class="section-container">
-            <section class="section">
+     function renderReplies($mostRecentComment) {
+        ob_start(); // Start output buffering
+
+        ?>
+    <div id="repliesContainer" class="section-container">
+        <section class="section">
             <?php if ($mostRecentComment): ?>
                 <p><?= $mostRecentComment['Content'] ?></p>
             <?php else: ?>
                 <p>No posts available</p>
             <?php endif; ?>
-            </section>
+        </section>
+    </div>
+    <?php
 
-        </div>   
-
-        return ob_get_clean(); // Return the buffered output as a string
-    }
-?>
+    return ob_get_clean(); // Return the buffered output as a string
+     }
+?> 
