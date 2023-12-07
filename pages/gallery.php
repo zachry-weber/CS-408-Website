@@ -36,7 +36,7 @@ $mostRecentComment = $dao->getMostRecentComment();
         <img src="../coolstick.png" alt="fakestig">
         <img src="../realstick-png.webp" alt="realstig">
         <img src="../minecraftstick.webp" alt="minecraftstig">
-            <form  class="reply-form" method="post" id="commentForm">
+            <form  class="reply-form" method="post" id="commentForm" action="/pages/createComment_handler.php">
                 <div style="text-align: center;"><label for="content">Comment:</label></Br>
                 <textarea id="content" name="content" rows="10"  style="width: 80%;" required></textarea></div>
                 <input type="submit" value="Submit Comment">
