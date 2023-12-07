@@ -56,7 +56,6 @@ $mostRecentComment = $dao->getMostRecentComment();
     <footer>
         &copy; 2023 Stiggy Thank You For Visiting!
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#commentForm').submit(function (e) {
